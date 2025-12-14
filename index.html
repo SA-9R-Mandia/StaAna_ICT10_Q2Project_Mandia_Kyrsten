@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Calculator</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+
+<!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
+      <script src="https://kit.fontawesome.com/9c8237ca87.js" crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <style>
+        .input-group-text { min-width: 80px;}
+        #sci {background-color: #32a852;}
+        #mat {background-color:#2398f7;}
+        #eng {background-color: #eb1e1e;}
+        #fil {background-color: #f570d8;}
+        #ic {background-color: #8a49da;}
+        #ep {background-color: #fcff38;}
+        #eht {background-color:#24f9e1;}
+
+        
+
+        .short-stack-regular {
+         font-family: "Short Stack", cursive;
+         font-weight: 400;
+         font-style: normal;
+         }
+
+        .btn {background-color:#24f9e1;}
+
+           :root {
+            --cyan: #24f9e1;
+            --light-cyan: #b4fdf5;
+            --cyan-dark: #006145;
+           }
+
+
+        .form-control {
+            margin-bottom: 5px;
+     
+        }
+        
+               
+         #student_info {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--cyan-dark);
+            margin-top: 30px;
+            padding: 15px;
+            background-color: var(--light-cyan);
+            border-radius: 5px;
+        }
+        #summary {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd; }
+        #output {
+            font-size: 1.3rem;
+            color: var(--cyan-dark);
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgb(75, 247, 226, 0.2);
+            border-radius: 5px;
+        }
+
+        #box {margin-left: auto; margin-right: auto; margin-top: 100px;}
+
+        .navbar {background-color:#eb1e1e;
+                 }
+    </style>
+
+
+    <nav class="navbar navbar-expand-md fixed-top">
+  <div class="container-fluid">
+      
+    <a class="navbar-brand short-stack-regular text-light" href="index.html"> <i class="fa-solid fa-fire"></i> Pyrotechnic University
+of Pasig</a>
+      
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end justify-content-center align-items-center" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title short-stack-regular text-light" id="offcanvasNavbarLabel"><i class="fa-solid fa-fire"></i> Pyrotechnic University
+of Pasig</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            
+          <li class="nav-item">
+            <a class="nav-link short-stack-regular" aria-current="page" href="home.html">Home</a>
+          </li>
+            
+          <li class="nav-item">
+            <a class="nav-link short-stack-regular" href="index.html">Student Grade Calculator</a>
+          </li>
+
+          <li class="nav-item short-stack-regular">
+            <a class="nav-link" href="clubs.html">Clubs</a>
+          </li>
+            
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
+   
+
+
+
+    
+    <div class="container-fluid short-stack-regular bg-dark" style="height:1000px;">
+        <div class="row">
+            
+        <div class="col-9 border border-dark rounded p-4 bg-light" id="box">
+           <center>
+           <h1>Student Grade Calculator <i class="fa-solid fa-calculator" style="color: #24f9e1;"></i> </h1>
+           </center>
+            <div class="mb-3">
+                
+            <div class="input-group">
+                <span class="input-group-text" id="eht">First Name</span>
+                <input type="text" class="form-control" id="first_name" >
+            </div><br>
+            
+            <div class="input-group">
+                <span class="input-group-text" id="eht">Last Name</span>
+                <input type="text" class="form-control" id="last_name" >
+            </div>
+        </div>
+
+        <h2>Enter your grades:</h2>
+        
+        <div class="grades-container">
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="sci">Science</span>
+                    <input type="text" class="form-control" id="science" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="mat">Math</span>
+                    <input type="text" class="form-control" id="math" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="eng">English</span>
+                    <input type="text" class="form-control" id="english" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="fil">Filipino</span>
+                    <input type="text" class="form-control" id="filipino" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="ic">ICT</span>
+                    <input type="text" class="form-control" id="ict" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="grade-input-group">
+                <div class="input-group">
+                    <span class="input-group-text" id="ep">PE</span>
+                    <input type="text" class="form-control" id="pe" placeholder="Grade">
+                </div>
+            </div>
+
+            <br>
+            
+        </div>
+        
+        <button class="btn" type="submit" py-click="general_weighted_average">Calculate GWA</button>
+
+
+        <div id="student_info"></div>
+        <pre id="summary"></pre>
+        <div id="output"></div>
+            
+        </div>
+
+        </div>
+
+
+        
+    </div>
+
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+    <script type="py" src="main.py"></script>
+</body>
+</html>
